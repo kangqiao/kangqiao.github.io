@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ZP 博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="start from zero">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZP 博客">
+<meta property="og:url" content="http://kangqiao.github.io/index.html">
+<meta property="og:site_name" content="ZP 博客">
+<meta property="og:description" content="start from zero">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZP 博客">
+<meta name="twitter:description" content="start from zero">
+  
+    <link rel="alternate" href="/atom.xml" title="ZP 博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ZP 博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">kq</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://kangqiao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hexo指南" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/26/hexo指南/" class="article-date">
+  <time datetime="2017-07-26T08:06:58.000Z" itemprop="datePublished">2017-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/26/hexo指南/">hexo指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##Hexo指南</p>
+<h3 id="GitHub-Hexo"><a href="#GitHub-Hexo" class="headerlink" title="GitHub + Hexo"></a>GitHub + Hexo</h3><p>GitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.<br>Hexo也是现在使用比较广的,也比较简单部署的静态框架.所以我们选择GitHub pages + Hexo来部署我们的博客.</p>
+<h3 id="使用hexo搭建部署Github博客"><a href="#使用hexo搭建部署Github博客" class="headerlink" title="使用hexo搭建部署Github博客"></a>使用hexo搭建部署Github博客</h3><h5 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 使用npm全局安装Hexo</div><div class="line">npm install -g hexo-cli</div><div class="line">// 初始化博客工程 安装依赖</div><div class="line">npm init &lt;folder&gt;</div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div><div class="line">// 安装hexo git提交插件</div><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h5 id="配置博客-config-yml"><a href="#配置博客-config-yml" class="headerlink" title="配置博客_config.yml"></a>配置博客<code>_config.yml</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">title: 这里填写博客的标题</div><div class="line">subtitle: 这里填写博客的副标题</div><div class="line">description: 这里填写博客的描述</div><div class="line">author: 这里填写博客的作者</div><div class="line">language: 这里填写博客的语言,如果是中文填写”zh-CN”</div><div class="line">timezone: Asia/Shanghai</div><div class="line">url: ”http://kangqiao.github.io“</div><div class="line"></div><div class="line">post_asset_folder: true </div><div class="line">#当您设置post_asset_folder为true参数后，在建立文件时，Hexo会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</div><div class="line">deploy:</div><div class="line">  type: 这里填写”git”</div><div class="line">  repo: 写”git@github.com:kangqiao/kangqiao.github.io.git”</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p><em> 如果需要了解更多hexo的配置或者想要做更高级的定制,可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">官方配置说明</a> </em></p>
+<h5 id="发表一篇文章"><a href="#发表一篇文章" class="headerlink" title="发表一篇文章"></a>发表一篇文章</h5><p>在终端命令行输入<code>hexo new 文章标题</code><br>我们可以在本地博客文件夹<code>source</code>-&gt;<code>_post</code>文件夹下看到我们新建的markdown文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: hexo指南</div><div class="line">date: 2017-07-26 16:06:58</div><div class="line">tags: [hexo]</div><div class="line">---</div><div class="line"></div><div class="line">你好，欢迎来到我的个人技术博客。</div></pre></td></tr></table></figure>
+<p>保存后，我们进行本地发布 <code>$ hexo server</code></p>
+<p><img src="hexo_server.png" alt="本地发布"></p>
+<h5 id="发布博客到GitHub-Pages"><a href="#发布博客到GitHub-Pages" class="headerlink" title="发布博客到GitHub Pages"></a>发布博客到GitHub Pages</h5><p>我们只要在终端执行这样的命令即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g -d</div><div class="line">这个命令的意思是使用hexo生成整个博客的网页文件,并且上传到我们刚才repo里面填写的git仓库里.hexo会自动检索我们博客文章的改动,删除,增加,并生成一套新的网页.</div></pre></td></tr></table></figure></p>
+<p>或者:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<h3 id="上传博客工程"><a href="#上传博客工程" class="headerlink" title="上传博客工程"></a>上传博客工程</h3><p>上一步部署博客到Github以后，我们可以在Github仓库的master分支上看到我们上传的博客文件。<br>但是这个博客文件是不包含hexo配置的，所以我们需要新建分支，使用git指令将带hexo配置的Github工程文件上传到新建的分支上。<br><img src="github创建分支.png" alt="github创建分支.png"><br>在本地博客根目录下使用git指令上传项目到Github:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// git初始化</div><div class="line">git init</div><div class="line">// 添加仓库地址</div><div class="line">git remote add origin https://github.com/用户名/仓库名.git</div><div class="line">// 新建分支并切换到新建的分支</div><div class="line">git checkout -b 分支名</div><div class="line">// 添加所有本地文件到git</div><div class="line">git add .</div><div class="line">// git提交</div><div class="line">git commit -m &quot;&quot;</div><div class="line">// 文件推送到hexo分支</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure></p>
+<p>其他设备上clone下Github上新建的分支的文件到本地<br>在另一台设备上使用git指令下载Github新建分支上的文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 克隆文件到本地</div><div class="line">git clone -b 分支名 https://github.com/用户名/仓库名.git</div></pre></td></tr></table></figure></p>
+<p>本地写文章<br>在<code>source</code>-&gt;<code>_posts</code>文件夹下新建md文件，并编辑好保存后：</p>
+<p>同步项目源文件到Github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 添加源文件</div><div class="line">git add .</div><div class="line">// git提交</div><div class="line">git commit -m &quot;&quot;</div><div class="line">// 先拉原来Github分支上的源文件到本地，进行合并</div><div class="line">git pull origin 分支名hexo</div><div class="line">// 比较解决前后版本冲突后，push源文件到Github的分支</div><div class="line">git push origin 分支名hexo</div></pre></td></tr></table></figure></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://shikieiki.github.io/2017/02/23/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">如何使用github和Hexo搭建个人博客</a><br><a href="http://www.jianshu.com/p/6fb0b287f950" target="_blank" rel="external">多设备同步hexo搭建的Github博客</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://kangqiao.github.io/2017/07/26/hexo指南/" data-id="cj81cyz5t0000c7v7yfn3of0c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/26/hexo指南/">hexo指南</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zhaopan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
