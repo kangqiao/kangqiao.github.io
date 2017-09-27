@@ -2,16 +2,16 @@
 title: hexo指南
 date: 2017-07-26 16:06:58
 tags: [hexo]
+comments: true
 ---
-
-##Hexo指南
 
 ### GitHub + Hexo
 GitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.
 Hexo也是现在使用比较广的,也比较简单部署的静态框架.所以我们选择GitHub pages + Hexo来部署我们的博客.
 
 ### 使用hexo搭建部署Github博客
-##### 初始化博客
+
+#### 初始化博客
 ```
 // 使用npm全局安装Hexo
 npm install -g hexo-cli
@@ -22,7 +22,7 @@ npm install
 // 安装hexo git提交插件
 npm install hexo-deployer-git --save
 ```
-##### 配置博客`_config.yml`
+#### 配置博客`_config.yml`
 ```
 title: 这里填写博客的标题
 subtitle: 这里填写博客的副标题
@@ -41,7 +41,7 @@ deploy:
 ```
 _ 如果需要了解更多hexo的配置或者想要做更高级的定制,可以查看[官方配置说明](https://hexo.io/docs/configuration.html) _
 
-##### 发表一篇文章
+#### 发表一篇文章
 在终端命令行输入`hexo new 文章标题`
 我们可以在本地博客文件夹`source`->`_post`文件夹下看到我们新建的markdown文件。
 
@@ -58,7 +58,7 @@ tags: [hexo]
 保存后，我们进行本地发布 `$ hexo server`
 ![本地发布](./hexo_server.png)
 
-##### 发布博客到GitHub Pages
+#### 发布博客到GitHub Pages
 我们只要在终端执行这样的命令即可：
 ```
 $ hexo g -d
@@ -69,7 +69,9 @@ $ hexo g -d
 $ hexo generate
 $ hexo deploy
 ```
+
 ### 上传博客工程
+
 上一步部署博客到Github以后，我们可以在Github仓库的master分支上看到我们上传的博客文件。
 但是这个博客文件是不包含hexo配置的，所以我们需要新建分支，使用git指令将带hexo配置的Github工程文件上传到新建的分支上。
 ![github创建分支](./github_create_branch.png)

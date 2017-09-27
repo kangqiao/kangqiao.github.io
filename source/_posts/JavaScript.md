@@ -1,11 +1,9 @@
 ---
 title: JavaScript
 date: 2017-09-26 18:46:59
-tags:
+tags: [JavaScript, JS]
 ---
-# Javascript
 
-[TOC]
 
 ## 数据类型
 
@@ -32,7 +30,7 @@ tags:
 ### 隐式转换
 
 #### +/-
-```
+```javascript
 num - 0; //num作为数字来运算
 num + ''; //num数字作字符处理
 
@@ -163,7 +161,7 @@ window.x = 1;
 
 #### new
 
-```
+```javascript
 function Foo(){}
 Foo.prototype.x = 1;
 var obj = new Foo();
@@ -175,7 +173,7 @@ obj.__proto__.hasOwnProperty('x'); // true
 #### this
 
 
-```
+```javascript
 this;  // window (浏览器)
 var obj = {
     func : function(){
@@ -187,7 +185,7 @@ obj.func(); // obj
 
 #### void
 
-```
+```javascript
 void 0  // undefined
 void(0) // undefined
 ```
@@ -197,7 +195,7 @@ void(0) // undefined
 ### 属性
 
 
-```
+```javascript
 var obj = {};
 obj.y = 2;
 obj.x = 1;
@@ -210,13 +208,13 @@ javascript属性是可以动态添加的.
 #### 标签
 
 ** 获取属性描述信息 ** 
-```
+```javascript
 Object.getOwnPropertyDescriptor({pro : true}, 'pro');
 // Object {value: true, writable: true, enumerable: true, configurable: true}
 Object.getOwnPropertyDescriptor({pro : true}, 'a'); // undefined
 ```
 ** 例子 *
-```
+```javascript
 // cat: 对象, 'price': 属性名, {} 是属性的标签集
 Object.defineProperty(cat, 'price', {enumerable : false, value : 1000});
 cat.propertyIsEnumerable('price'); // false
@@ -240,7 +238,7 @@ if (cat.legs !== undefined) {
 ##### enumerable
 
 
-```
+```javascript
 var o = {x : 1, y : 2, z : 3};
 'toString' in o; // true
 o.propertyIsEnumerable('toString'); // false
@@ -250,7 +248,7 @@ for (key in o) {
 }
 ```
 
-```
+```javascript
 var obj = Object.create(o);
 obj.a = 4;
 var key;
@@ -272,7 +270,7 @@ for (key in obj) {
 ##### configurable/writable
 
 
-```
+```javascript
 var o = {};
 Object.defineProperty(o, 'x', {value : 1}); // writable=false, configurable=false
 var obj = Object.create(o);
@@ -294,7 +292,7 @@ defineProperties
 
 
 ** defineProperty自定义属性 **
-```
+```javascript
 var person = {};
 Object.defineProperty(person, 'name', {
     configurable : false,
@@ -310,7 +308,7 @@ delete person.name; // false
 ```
 
 ** 同时定义多个属性defineProperties ** 
-```
+```javascript
 Object.defineProperties(person, {
     title : {value : 'fe', enumerable : true},
     corp : {value : 'BABA', enumerable : true},
@@ -326,7 +324,7 @@ Object.getOwnPropertyDescriptor(person, 'corp');
 
 ###### 例子
 
-```
+```javascript
 Object.defineProperties(person, {
     title : {value : 'fe', enumerable : true},
     corp : {value : 'BABA', enumerable : true},
@@ -355,7 +353,7 @@ person.salary; // 60000
 ####  删除
 
 
-```
+```javascript
 var person = {age : 28, title : 'fe'};
 delete person.age; // true
 delete person['title']; // true
@@ -370,7 +368,7 @@ descriptor.configurable; // false
 
 ** delete 不能删除全局变量, 局部变量, 函数声明.
 但是可以删除隐式的全局变量 **
-```
+```javascript
 ohNo = 1;
 window.ohNo; // 1
 delete ohNo; // true
@@ -379,7 +377,7 @@ delete ohNo; // true
 #### 属性检测
 
 
-```
+```javascript
 var cat = new Object;
 cat.legs = 4;
 cat.name = "Kitty";
@@ -390,7 +388,7 @@ cat.name = "Kitty";
 "toString" in cat; // true, inherited property!!!
 ```
 
-```
+```javascript
 
 cat.hasOwnProperty('legs'); // true
 cat.hasOwnProperty('toString'); // false
@@ -403,7 +401,7 @@ cat.propertyIsEnumerable('toString'); // false
 #### getter/setter方法
 
 
-```
+```javascript
 var man = {
     name : 'Bosn',
     weibo : '@Bosn',
@@ -421,7 +419,7 @@ console.log(man.age); // still 27
 
 ##### 例子
 
-```
+```javascript
 var man = {
     weibo : '@Bosn',
     $age : null,
@@ -453,7 +451,7 @@ man.age = 'abc'; // error:Incorrect val = NaN
 ##### get/set与原型链结合
 
 
-```
+```javascript
 function foo() {}
 
 Object.defineProperty(foo.prototype, 'z', {get : function(){return 1;}});
@@ -465,7 +463,7 @@ obj.z = 10;
 obj.z; // still 1
 ```
 
-```
+```javascript
 Object.defineProperty(obj, 'z', 
 {value : 100, configurable: true});
 obj.z; // 100;
@@ -479,7 +477,7 @@ obj.z; // back to 1
 
 #### class
 
-```
+```javascript
 var toString = Object.prototype.toString;
 function getType(o){return toString.call(o).slice(8,-1);};
 
@@ -495,7 +493,7 @@ getType(new Boolean(true)); // "Boolean"
 
 #### extensible / seal / freeze
 
-```
+```javascript
 var obj = {x : 1, y : 2};
 //是否可扩展, 默认true.
 Object.isExtensible(obj); // true
@@ -527,7 +525,7 @@ Object.isFrozen(obj); // true
 #### {}字面量方式创建
 
 
-```
+```javascript
 var obj1 = {x : 1, y : 2};
 
 var obj2 = {
@@ -543,7 +541,7 @@ var obj2 = {
 #### new/原型链
 
 
-```
+```javascript
 
 function foo(){}
 foo.prototype.z = 3;
@@ -581,7 +579,7 @@ obj.z; // still 3!!!
 #### Object.create
 
 Object.create是系统内置的函数,它会返回一个新创建的对象, 并且这个创建的对象的原型指向这个参数对象.
-```
+```javascript
 var obj = Object.create({x : 1});
 obj.x // 1
 typeof obj.toString // "function"
@@ -591,7 +589,7 @@ obj.hasOwnProperty('x');// false
 
 ### 序列化-- JSON.stringify()
 
-```
+```javascript
 var obj = {x : 1, y : true, z : [1, 2, 3], nullVal : null};
 JSON.stringify(obj); // "{"x":1,"y":true,"z":[1,2,3],"nullVal":null}"
 
@@ -605,7 +603,7 @@ obj.x; // 1
 
 #### toJSON 自定义-序列化
 
-```
+```javascript
 var obj = {
     x : 1,
     y : 2,
@@ -623,7 +621,7 @@ JSON.stringify(obj); // "{"x":1,"y":2,"o":3}"
 #### valueOf 实现基本类型
 
 ** 其他对象方法 ** 
-```
+```javascript
 var obj = {x : 1, y : 2};
 obj.toString(); // "[object Object]"
 obj.toString = function() {return this.x + this.y};
@@ -643,7 +641,7 @@ obj.valueOf = function() {return this.x + this.y + 100;};
 
 请注意：没有块级作用域
 
-```
+```javascript
 if(true){
     var ss = 'aaa';
 }
@@ -651,7 +649,7 @@ ss
 "aaa"
 ```
 
-```
+```javascript
 function foo() {
     var a = b = 1;
 }
@@ -670,7 +668,7 @@ console.log(typeof b);  // ‘number’
 2. enumerable为false时不会出现
 3. for in对象属性时受原型链影响
 
-```
+```javascript
 var p;
 var obj = {x : 1, y: 2}
 
@@ -687,7 +685,7 @@ JS的严格模式下已经禁用with
 - 可被变量定义代替
 -严格模式下被禁用
 
-```
+```javascript
 with ({x : 1}) {
     console.log(x);
 }
@@ -705,12 +703,12 @@ console.log(form.name.value);
 它修复了部分语言上的不足，
 提供更强的错误检查，并增强安全性。
 
-```
+```javascript
 function func() {
     'use strict';
 }
 ```
-```
+```javascript
 'use strict';
 function func() {
 }
@@ -730,7 +728,7 @@ function func() {
 #### 不允许未声明的变量被赋值
 
 ReferenceError
-```
+```javascript
 !function() {
 	'use strict';
 	 x = 1;
@@ -741,14 +739,14 @@ ReferenceError
 #### arguments变为参数的静态副本
 
 
-```
+```javascript
 !function(a) {
 	arguments[0] = 100;
 	console.log(a); //100
 }(1);
 ```
 
-```
+```javascript
 !function(a) {
 	'use strict';
 	arguments[0] = 100;
@@ -756,7 +754,7 @@ ReferenceError
 }(1);
 ```
 
-```
+```javascript
 !function(a) {
 	'use strict';
 	arguments[0].x = 100;
@@ -766,13 +764,13 @@ ReferenceError
 
 #### delete参数、函数名报错
 
-```
+```javascript
 !function(a) {
 	console.log(delete a); //false
 }(1);
 ```
 
-```
+```javascript
 !function(a) {
 	'use strict';
 	delete a; //SyntaxError
@@ -783,7 +781,7 @@ ReferenceError
 #### delete不可配置的属性报错
 
 
-```
+```javascript
 !function(a) {
 	var obj = {};
 	Object.defineProperty(obj, 
@@ -792,7 +790,7 @@ ReferenceError
 }(1);
 ```
 
-```
+```javascript
 !function(a) {
 	'use strict';
 	var obj = {};
@@ -804,14 +802,14 @@ ReferenceError
 
 #### 对象字面量重复属性名报错
 
-```
+```javascript
 !function() {
 	var obj = {x : 1, x : 2};
     console.log(obj.x); //2
 }();
 ```
 
-```
+```javascript
 !function() {
 	'use strict';
 	var obj = {x : 1, x : 2}; //SyntaxError
@@ -821,13 +819,13 @@ ReferenceError
 #### 禁止八进制字面量
 
 
-```
+```javascript
 !function() {
 	console.log(0123); //83
 }();
 ```
 
-```
+```javascript
 !function() {
 	'use strict';
 	console.log(0123); //SyntaxError
@@ -836,7 +834,7 @@ ReferenceError
 
 #### eval, arguments变为关键字，不能作为变量、函数名
 
-```
+```javascript
 !function() {
 	function eval(){}
     console.log(eval);
@@ -845,7 +843,7 @@ ReferenceError
 function eval(){}
 ```
 
-```
+```javascript
 !function() {
 	'use strict';
 	function eval(){} //SyntaxError
@@ -854,7 +852,7 @@ function eval(){}
 
 #### eval独立作用域
 
-```
+```javascript
 !function() {
 	eval('var evalVal = 2;');
 	console.log(typeof evalVal); //number
@@ -862,7 +860,7 @@ function eval(){}
 ```
 
 undefined
-```
+```javascript
 !function() {
 	'use strict';
 	eval('var evalVal = 2;');
@@ -889,7 +887,7 @@ arguments.caller, arguments.callee被禁用 _
 
 数组是值的有序集合。每个值叫做元素，每个元素在数组中都有数字位置编号，也就是索引。JS中的数组是弱类型的，数组中可以含有不同类型的元素。数组元素甚至可以是对象或其它数组。
 
-```
+```javascript
 {}   =>  Object.prototype
 []   =>  Array.prototype
 
@@ -918,7 +916,7 @@ arr.__proto__ === Array.prototype //true
 
 ###  创建/读写
 
-```
+```javascript
 var BAT = ['Alibaba', 'Tencent', 'Baidu'];
 var students = [{name : 'Bosn', age : 27}, {name : 'Nunnly', age : 3}];
 var arr = ['Nunnly', 'is', 'big', 'keng', 'B', 123, true, null];
@@ -928,14 +926,14 @@ var commasArr1 = [1, , 2]; // 1, undefined, 2
 var commasArr2 = [,,]; // undefined * 2
 ```
 ** 通过Array构造器创建**
-```
+```javascript
 var arr = new Array(); 
 var arrWithLength = new Array(100); // undefined * 100
 var arrLikesLiteral = new Array(true, false, null, 1, 2, "hi");
 // 等价于[true, false, null, 1, 2, "hi"];
 ```
 ** 读写 ** 
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 arr[1]; // 2
 arr.length; // 5
@@ -949,7 +947,7 @@ arr[0]; // undefined
 
 ### 动态的增删元素
 
-```
+```javascript
 var arr = [];
 arr[0] = 1;
 arr[1] = 2;
@@ -983,7 +981,7 @@ arr; // [1, undefined]
 ### for...in 迭代
 
 
-```
+```javascript
 var i = 0, n = 10;
 var arr = [1, 2, 3, 4, 5];
 for (; i < n; i++) {
@@ -995,7 +993,7 @@ for(i in arr) {
 }
 ```
 ** for...in迭代, 过滤掉原型上的属性 ** 
-```
+```javascript
 Array.prototype.x = 'inherited';
 
 for(i in arr) {
@@ -1012,7 +1010,7 @@ for(i in arr) {
 
 ### 二维数组
 
-```
+```javascript
 var arr = [[0, 1], [2, 3], [4, 5]];
 var i = 0, j = 0;
 var row;
@@ -1041,7 +1039,7 @@ for (; i < arr.length; i++) {
 
 _稀疏数组并不含有从0开始的连续索引。一般length属性值比实际元素个数大。_
 
-```
+```javascript
 var arr1 = [undefined];
 var arr2 = new Array(1);
 0 in arr1; // true
@@ -1061,7 +1059,7 @@ var arr = [,,];
 ** 字符串不是数组, 是不可变的.
 字符串上没有数组上的方法, 
 如果要使用数组的一些方法, 需要通过Array.prototype原型来调用. **
-```
+```javascript
 var str = "hello world";
 str.charAt(0); // "h"
 str[1]; // e
@@ -1093,7 +1091,7 @@ Array.prototype.join.call(str, "_");
 
 #### join
 
-```
+```javascript
 var arr = [1, 2, 3];
 arr.join(); // "1,2,3"
 arr.join("_"); // "1_2_3"
@@ -1107,7 +1105,7 @@ repeatString("Hi", 5); // "HiHiHiHiHi"
 
 #### indexOf / lastIndexOf 数组检索
 
-```
+```javascript
 var arr = [1, 2, 3, 2, 1];
 arr.indexOf(2); // 1
 arr.indexOf(99); // -1
@@ -1121,7 +1119,7 @@ arr.lastIndexOf(2, -3); // 1
 
 #### forEach 
 
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 arr.forEach(function(x, index, a){
     console.log(x + '|' + index + '|' + (a === arr));
@@ -1136,7 +1134,7 @@ arr.forEach(function(x, index, a){
 #### every / some 数组判断
 
 ** _ 数组判断 _ **
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 arr.every(function(x) {
      return x < 10;
@@ -1147,7 +1145,7 @@ arr.every(function(x) {
 }); // false
 ```
 
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 arr.some(function(x) {
      return x === 3;
@@ -1161,7 +1159,7 @@ arr.some(function(x) {
 #### reverse 修改
 
 原数组被修改
-```
+```javascript
 var arr = [1, 2, 3];
 arr.reverse(); // [3, 2, 1]
 arr; // [3, 2, 1]
@@ -1171,7 +1169,7 @@ arr; // [3, 2, 1]
 
 #### sort 修改
 
-```
+```javascript
 var arr = ["a", "d", "c", "b"];
 arr.sort(); // ["a", "b", "c", "d"]
 
@@ -1200,7 +1198,7 @@ arr.forEach(function(item) {
 #### splice 修改
 
 ** _ 原数组被修改 _ **
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 arr.splice(2); // returns [3, 4, 5]
 arr; // [1, 2];
@@ -1217,7 +1215,7 @@ arr; // [1, "a", "b", 3, 4, 5]
 #### slice 不修改
 
 ** _ slice原数组未被修改 _ **
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 arr.slice(1, 3); // [2, 3]
 arr.slice(1); // [2, 3, 4, 5]
@@ -1229,7 +1227,7 @@ arr.slice(-4, -3); // [2]
 #### concat 不修改
 
 ** _ concat 原数组未被修改 _ **
-```
+```javascript
 var arr = [1, 2, 3];
 arr.concat(4, 5); // [1, 2, 3, 4, 5]
 arr; // [1, 2, 3]
@@ -1242,7 +1240,7 @@ arr.concat([1, [2, 3]]); // [1, 2, 3, 1, [2, 3]]
 #### filter 不修改
 
 ** _ filter不修改原ovxe _ *
-```
+```javascript
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 arr.filter(function(x, index) {
      return index % 3 === 0 || x >= 8;
@@ -1253,7 +1251,7 @@ arr; // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 #### map 不修改
 
 ** _ map不修改原数组 _ **
-```
+```javascript
 var arr = [1, 2, 3];
 arr.map(function(x) {
      return x + 10;
@@ -1263,7 +1261,7 @@ arr; // [1, 2, 3]
 
 #### reduce / reduceRight 不修改
 
-```
+```javascript
 max = arr.reduceRight(function(x, y) {
      console.log(x + "|" + y);
      return x > y ? x : y;
@@ -1273,7 +1271,7 @@ max = arr.reduceRight(function(x, y) {
 max; // 9
 ```
 
-```
+```javascript
 var arr = [1, 2, 3];
 var sum = arr.reduce(function(x, y) {
      return x + y
@@ -1292,7 +1290,7 @@ max; // 9
 
 #### isArray 是否为数组
 
-```
+```javascript
 Array.isArray([]); // true
 
 [] instanceof Array; // true
@@ -1326,7 +1324,7 @@ _ 不同的调用方式 _
 
 ** 函数声明 **
 _可以前置_
-```
+```javascript
 function add (a, b) {
   a = +a;
   b = +b;
@@ -1338,7 +1336,7 @@ function add (a, b) {
 ```
 ** 函数表达式 **
 _变量提前为undefined, 函数不前置_
-```
+```javascript
 // 函数变量
 // function variable
 var add = function (a, b) {
@@ -1374,7 +1372,7 @@ var func = function nfe() {
 }
 ```
 ** Function构造器 **
-```
+```javascript
 var func = new Function('a', 'b', 'console.log(a + b);');
 func(1, 2); // 3
 var func = Function('a', 'b', 'console.log(a + b);');
@@ -1410,7 +1408,7 @@ Function('console.log(typeof localVal, typeof globalVal);')();
 #### 全局的this(浏览器)
 
 
-```
+```javascript
 console.log(this.document === document); // true
 console.log(this === window); // true
 this.a = 37;
@@ -1419,7 +1417,7 @@ console.log(window.a); // 37
 
 #### 一般函数的this(浏览器)
 
-```
+```javascript
 function f1(){
   return this;
 }
@@ -1434,7 +1432,7 @@ f2() === undefined; // true
 
 #### 作为对象方法的函数的this
 
-```
+```javascript
 var o = {
   prop: 37,
   f: function() {
@@ -1453,7 +1451,7 @@ console.log(o.f()); // logs 37
 
 #### 对象原型链上的this
 
-```
+```javascript
 var o = {f:function(){ return this.a + this.b; }};
 // 创建一个对象p, p的原型为对象o
 var p = Object.create(o);
@@ -1465,7 +1463,7 @@ console.log(p.f()); // 5
 
 #### get/set方法与this
 
-```
+```javascript
 function modulus(){
   return Math.sqrt(this.re * this.re + this.im * this.im);
 }
@@ -1486,7 +1484,7 @@ console.log(o.phase, o.modulus); // logs -0.78 1.4142
 
 #### 构造器中的this
 
-```
+```javascript
 function MyClass(){
   this.a = 37;
 }
@@ -1505,7 +1503,7 @@ console.log(o.a); // 38
 
 #### call/apply方法与this
 
-```
+```javascript
 function add(c, d){
   return this.a + this.b + c + d;
 }
@@ -1527,7 +1525,7 @@ bar.call(7); // "[object Number]"
 
 #### bind方法与this
 
-```
+```javascript
 function f(){
   return this.a;
 }
@@ -1546,7 +1544,7 @@ console.log(o.f(), o.g()); // 37, test
 foo.name 函数名
 foo.length 形参个数
 arguments.length 实参个数
-```
+```javascript
 function foo(x, y, z) {
   arguments.length; // 2
   arguments[0]; // 1
@@ -1562,7 +1560,7 @@ foo.length; // 3
 foo.name; // "foo"
 ```
 ** apply/call第一个参数作为函数this对象; 若为null或undefined时, 函数的this为全局的window对象. **
-```
+```javascript
 function foo(x, y) {
   console.log(x, y, this);
 }
@@ -1572,7 +1570,7 @@ foo.apply(null); // undefined, undefined, window
 foo.apply(undefined); // undefined, undefined, window
 ```
 ** 严格模式下, 第一个参数不会变为默认window对象. **
-```
+```javascript
 function foo(x, y) {
   'use strict';
   console.log(x, y, this);
@@ -1586,7 +1584,7 @@ foo.apply(undefined); // undefined, undefined, undefined
 #### bind方法
 
 ** 函数对象的绑定方法是将第一个参数作为函数的this. 并返回一个新的g函数对象. *
-```
+```javascript
 this.x = 9;
 var module = {
   x: 81,
@@ -1605,7 +1603,7 @@ boundGetX(); // 81; bind后getX的this是bind的第一个参数module对象.
 #### bind与currying
 
 ** 当第一个参数为null时, 仅改变了参数的绑定. 这样的话就指定了默认的配置 *
-```
+```javascript
 function getConfig(colors, size, otherOptions) {
   console.log(colors, size, otherOptions);
 }
@@ -1617,7 +1615,7 @@ defaultConfig("456"); // #CC0000 1024 * 768 456
 #### bind与new
 
 ** new创建对象时, 会忽略构造器的return 返回值. **
-```
+```javascript
 function foo() {
   this.b = 100;
   return this.a;
@@ -1634,7 +1632,7 @@ new func(); // {b : 100}
 ** bind方法是ES5才提供的, 之前是没有的."
 
 _ 在低版本上模拟bind方法实现 _
-```
+```javascript
 if (!Function.prototype.bind) {
   Function.prototype.bind = function(oThis) {
     if (typeof this !== 'function') {
@@ -1669,7 +1667,7 @@ from 维基百科
 #### 实用例子
 
 
-```
+```javascript
 !function() {
  var localData = "localData here";
   document.addEventListener('click',
@@ -1679,7 +1677,7 @@ from 维基百科
 }();
 ```
 
-```
+```javascript
 !function() {
  var localData = "localData here";
   var url = "http://www.baidu.com/";
@@ -1696,7 +1694,7 @@ from 维基百科
 #### 闭包-常见错误之循环闭包
 
 
-```
+```javascript
 document.body.innerHTML = "<div id=div1>aaa</div>" + "<div id=div2>bbb</div><div id=div3>ccc</div>";
 for (var i = 1; i < 4; i++) {
   document.getElementById('div' + i).
@@ -1705,8 +1703,9 @@ for (var i = 1; i < 4; i++) {
     });
 }
 ```
-**正确在循环中使用 ** 
-```
+** 正确在循环中使用 ** 
+
+```javascript
 for (var i = 1; i < 4; i++) {
   !function(i) {
     document.getElementById('div' + i).addEventListener('click', function() {
@@ -1714,12 +1713,12 @@ for (var i = 1; i < 4; i++) {
     });
   }(i);
 }
-````
+```
 
 #### 闭包-封装
 
 ** 由于函数中的局部变量在函数执行完成后销毁了. 通过闭包函数持有局部变量, 即可将变量隐藏起来, 只能通过返回的闭包去访问变量. *
-```
+```javascript
 // 立即执行函数
 (function() {
   var _userId = 23492;
@@ -1759,7 +1758,7 @@ _ JavaScript作用域包括: _
 - eval `eval("var a = 1;");`
 
 利用函数作用域封装
-```
+```javascript
 // () 和 ! 可以将函数作为表达式来处理.
 (function() {
   // do sth here
@@ -1773,7 +1772,7 @@ _ JavaScript作用域包括: _
 ```
 
 _ Function构造函数中不能访问局部变量 _
-```
+```javascript
 function outer() {
   var i = 1;
   var func = new Function("console.log(typeof i);");
@@ -1797,7 +1796,7 @@ _ JS解释器如何找到我们定义的函数和变量？ _
 
 
 _ 全局上下文的this在浏览器中是window, 在NodeJs中是global对象. _
-```
+```javascript
 # 执行上下文与变量对象的定义:
 activeExecutionContext = {
   VO : {
@@ -1809,7 +1808,7 @@ activeExecutionContext = {
 GlobalContextVO => (VO === this === global)
 ```
 **例子:**
-```
+```javascript
 var a = 10;
 function test(x) {
   var b = 20;
@@ -1817,7 +1816,7 @@ function test(x) {
 test(30);
 ```
 **解析:**
-```
+```javascript
 VO(globalContext) = {
   a : 10,
   test : <ref to function>
@@ -1832,7 +1831,7 @@ VO(test functionContext) = {
 #### 全局执行上下文
 
 ** JS在初始化时, 就会将Math String window ...放入到全局的VO对象中. 当调用时其实就是访问全局的VO对象中对应的值 **
-```
+```javascript
 VO(globalContext) === [[global]];
 
 [[global]] = {
@@ -1855,7 +1854,7 @@ this.b = 20; // [[global]].b = 20;
 
 ** 函数的激活对象是函数调用时会有一个arguments参数**
 
-```
+```javascript
 VO(functionContext) === AO;
 
 AO = {
@@ -1876,7 +1875,7 @@ arguments = {
 2. 函数声明 (若发⽣生命名冲突，会覆盖) `将内部的函数d声明放到VO中`
 3. 变量声明 (初始化变量值为undefined，若发⽣生命名冲突，会忽略。) `将函数中的变量声明放到VO中`
 
-```
+```javascript
 function test(a, b) {
  var c = 10;
   function d() {}
@@ -1897,7 +1896,7 @@ AO(test) = {
 // _e函数名不会影响到VO
 ```
 ** 例子 ** 
-```
+```javascript
 // 函数声明覆盖了参数x
 function foo(x, y, z){function x(){}; alert(x);} foo(100); 
 // alert: function x(){}
@@ -1915,7 +1914,7 @@ function foo(x, y, z){function func(){}; var func = 1; console.log(func);} foo(1
 #### 代码执行阶段
 
 ** 执行代码 ** 
-```
+```javascript
 function test(a, b) {
   var c = 10;
   function d() {}
@@ -1927,7 +1926,7 @@ function test(a, b) {
 test(10);
 ```
 ** 初始化阶段 ** 
-```
+```javascript
 AO(test) = {
  a: 10,
  b: undefined,
@@ -1937,7 +1936,7 @@ AO(test) = {
 };
 ```
 ** 执行阶段 ** 
-```
+```javascript
 VO['c'] = 10;
 VO['e'] = function _e() {};
 VO['b'] = 20;
@@ -1954,7 +1953,7 @@ AO(test) = {
 #### 例子
 
 _ 代码如下: _
-```
+```javascript
 alert(x); // function
 
 var x = 10;
@@ -1999,7 +1998,7 @@ Student.prototype = Object.create(Person.prototype);
 Person.Student.prototype.constructor = Student;
 
 ** Object.create()是ES5之后才支持的，在es5之前我们可以写一个模拟的方法. **
-```
+```javascript
 if (!Object.create) {
     Object.create = function(proto) {
         function F() {};
@@ -2010,7 +2009,7 @@ if (!Object.create) {
 ```
 ----
 ** 通过指定父类的实例为子类的原型实现继承 (不推荐,  new per()在构造器的操作是没有意义的)**
-```
+```javascript
 function per() {};
 
 function sor() {};
@@ -2022,7 +2021,7 @@ sor.prototype.constructor = sor;
 #### 基于原型的继承
 
 ![基于原型的继承](http://kityminder-img.gz.bcebos.com/bafaa34ae89c96aea99949e83c79d64365e8b721)
-```
+```javascript
 function Foo() {
     this.y = 2;
 };
@@ -2045,15 +2044,15 @@ console.log(obj3.x); //1
 #### prototype属性与原型
 
 
-** 使用函数声明去中创建一个函数的时候，这个函数就会有一个prototype属性，并且他默认会有两个属性。**
+** 使用函数声明去中创建一个函数的时候，这个函数就会有一个prototype属性，并且他默认会有两个属性. **
 
 1. 一个是constructor:Fooconstructor属性会指向它本身Foo。
-2. 另外一个属性是__proto__，__proto__是Foo.prototype的原型，那么他的原型会指向Object.prototype也就是说一般的对象比如用花括号括起来的对象字面量，他也会有__proto__他会指向Object.prototype因此Object.prototype上面的一些方法比如说toString，valueOf才会被每一个一般的对象所使用，
+2. 另外一个属性是`__proto__`，`__proto__`是Foo.prototype的原型，那么他的原型会指向Object.prototype也就是说一般的对象比如用花括号括起来的对象字面量，他也会有`__proto__`他会指向Object.prototype因此Object.prototype上面的一些方法比如说toString，valueOf才会被每一个一般的对象所使用，
 
 #### 继承实例
 
 ** 继承实例 **
-```
+```javascript
 function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -2133,7 +2132,7 @@ peng.hi();方法的时候，首先看这个对象上本身有没有hi方法，�
 #### 特殊情况
 
 ** 并不是所有对象最终原型链上最终都有Object.prototype **
-```
+```javascript
 var obj2=Object.create(null);
 obj2.__proto__ //undefined
 obj2.toString() //undefined
@@ -2141,7 +2140,7 @@ obj2.toString() //undefined
 obj2.create(null)的作用是创建空对象，并且这个对象的原型指向这样一个参数，但是这里参数是null，obj2这个时候他的原型就是undefined，obj2.toString就是undefined那么通过Object.create(null)创建出来的对象，就没有Object.prototype的一些方法。所以说并不是所有的对象都继承Object.prototype
 
 ** 并不是所有的函数对象都有prototype这样一个预制属性的 **
-```
+```javascript
 function abc() {};
 console.log(abc.prototype);
 var hh = abc.bind(null);
@@ -2155,7 +2154,7 @@ console.log(hh.prototype);
 
 ** javascript中的prototype原型，不像java的class，是一旦写好了以后不太容易去动态改变的，但是javascript中原型实际上也是普通的对象，那么意味着在程序运行的阶段我们也可以动态的给prototype添加或者删除一些属性. **
 
-```
+```javascript
 Student.prototype.x=101;
 console.log(peng.x);//101
 
@@ -2176,7 +2175,7 @@ console.log(nunnly.x);//undefined
 #### 内置构造器的prototype
 
 ** 为所有的对象都增加一个x属性, 并更改属性配置for...in时不枚举原型上的变量 ** 
-```
+```javascript
 Object.defineProperty(Object.prototype, 'x', {writable: true,value: 1});
 var obj = {
     y: 3
@@ -2197,7 +2196,7 @@ for (var key in obj) {
 
 #### 创建对象-new/原型链
 
-```
+```javascript
 function foo(){}    //定义函数对象 foo
 foo.prototype.z = 3;      //函数对象默认带foo.prototype对象属性  这个对象会作为new实例的对象原型  对象添加z属性=3
 
@@ -2219,7 +2218,7 @@ obj.hasOwnProperty('z'); // false   表示z并不是obj直接对象上的，而�
 ### instanceof
 
 ** instanceof数据类型判断方法 **
-```
+```javascript
 console.log([1, 2] instanceof Array); //true
 console.log(new Object() instanceof Array); //false
 
@@ -2229,7 +2228,7 @@ new String(1) instanceof String //true
 ```
 **左边要求是一个对象instanceof右边要求是一个函数或者说构造器他会判断右边的构造器的 prototype的属性是否出现在左边这个对象的原型链上。**
 
-```
+```javascript
 function per() {};
 
 function sor() {};
@@ -2250,7 +2249,7 @@ console.log(han instanceof per); //true
 #### 模拟重载
 
 ** 模拟重载 **
-```
+```javascript
 function person() {
     var args = arguments;
     if (typeof args[0] === 'object' && args[0]) {
@@ -2286,7 +2285,7 @@ console.log(peng1.toString()); //姓名:是你年龄:23
 #### 调用父类方法和子类重载父类方法
 
 ** 调用父类方法和子类重载父类方法 **
-```
+```javascript
 function Person(name) {//基类
     this.name=name;
 }
@@ -2312,7 +2311,7 @@ Student.prototype.init=function(){
 #### 链式调用
 
 ** 链式调用 **
-```
+```javascript
 function classman() {}
 //给classman构造器prototype添加addClass属性方法
 classman.prototype.addClass = function(str) {
@@ -2331,7 +2330,7 @@ mang.addClass('classA').addClass('classB').addClass('classC')
 #### 抽象类
 
 ** 抽象类 **
-```
+```javascript
 function Detectorlse() {
     throw new Error("Abstract class can not be invoked directly!");
 }
@@ -2354,7 +2353,7 @@ linkDetector.prototype.constructor = linkDetector;
 
 #### defineProperty(ES5)
 
-```
+```javascript
 function Person(name) {
     Object.defineProperty(this, 'name', {
         value: name,
@@ -2379,7 +2378,7 @@ student.prototype.constructor = student;
 #### 模块化
 
 ** 定义简单模块化 ** 
-```
+```javascript
 var moduleA;
 moduleA=function(){
     var prop=1;
@@ -2391,7 +2390,7 @@ moduleA=function(){
 }();
 ```
 ** 定义简单模块化2 **
-```
+```javascript
 var moduleA;
 moduleA = new function() {
     var prop = 1;
@@ -2404,7 +2403,7 @@ moduleA = new function() {
 
 ### 实践（探测器）
 
-```
+```javascript
 (function(global) {
     function DetectorBase(configs) {
         if (!this instanceof DetectorBase) {
@@ -2489,7 +2488,7 @@ linkDetector.detect();
 ** 正则表达式(regular expression)是一个描述字符模式的对象。ECMAScript的RegExp类表示正则表达式，而String和RegExp都定义了使用正则表达式进行强大的模式匹配和文本检索与替换的函数。**
 
 一个简单的例子
-```
+```javascript
 /\d\d\d/.test("123"); //true
 /\d\d\d/.test("abc"); //false
 new RegExp("Bosn").test("Hi, Bosn"); //true
@@ -2510,7 +2509,7 @@ new RegExp("Bosn").test("Hi, Bosn"); //true
 ### 三个flag
 
 ** _ global ignoreCase multiline _ **
-```
+```javascript
 /abc/gim.test("ABC"); //true
 RegExp("abc", "mgi"
 ```
@@ -2521,7 +2520,7 @@ i|执行对大小写不敏感的匹配。
 g|执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
 m|执行多行匹配。
 
-```
+```javascript
     var reg1 = new RegExp("lisong",'ig');
 	var reg2 = new RegExp("lisong");
 	var reg3 = /lisong/ig;
@@ -2531,7 +2530,7 @@ m|执行多行匹配。
 ### RegExp对象的属性
 
 ** _ global ignoreCase multiline source _ ** 
-```
+```javascript
 /abc/g.global  //true
 /abc/g.ignoreCase  //false
 /abc/g.multiline  //false
@@ -2541,7 +2540,7 @@ m|执行多行匹配。
 ### RegExp 对象的方法
 
 ** _ compile, exec, test, toString _ *
-```
+```javascript
 /abc/.exec("abcdef");  //"abc"
 /abc/.test("abcde");  //true
 /abc/.toString();  //"/abc/"
@@ -2560,7 +2559,7 @@ test|检索字符串中指定的值。返回 true 或 false。|1|4
 
 
 ![](http://img.blog.csdn.net/20170202215754180?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYTQwOTA1MTk4Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
-```
+```javascript
 var str = "123abc456lisong789hehe";
 	var regExp = new RegExp("[a-z]+(\\d+)","g");
 	console.log( regExp.exec(str) ); //["abc456", "456", index: 3, input: "123abc456lisong789hehe"]
@@ -2589,7 +2588,7 @@ var str = "123abc456lisong789hehe";
 ### String类型与正则相关的方法
 
 
-```
+```javascript
 String.prototype.search
 "abcabcdef".search(/(abc)\1/);  //0
 
@@ -2610,7 +2609,7 @@ String.prototype.split
 ## Promise
 
 
-```
+```javascript
 let checkLogin = function () {
   return new Promise(function (resolve,reject) {
     let flag = document.cookie.indexOf("userId")>-1?true:false;
