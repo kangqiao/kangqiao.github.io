@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="算法|图," />
 
 
 
@@ -96,16 +96,24 @@
 
 
 
-<meta name="description" content="zp">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZP 博客">
-<meta property="og:url" content="http://kangqiao.github.io/index.html">
+<meta name="description" content="图的表示图的定义图G定义为V和E的集合G={V, E}，其中V表示图中的所有的顶点集合，E表示的是G中的所有的边的集合。图按照E中的元素是否有方向，分为有向图和无向图。  图的表示方法上面给出的数学上图的定义，那么在计算机中如何表示图？通常意义上，有下面的两种方法：邻接表和邻接矩阵表示法。 无向图的邻接表和邻接矩阵表示如下所示： 有向图的邻接表和邻接矩阵表示如下所示： 根据上面的表示方法，下面定义">
+<meta name="keywords" content="算法|图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有向图基本算法--遍历算法">
+<meta property="og:url" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/index.html">
 <meta property="og:site_name" content="ZP 博客">
-<meta property="og:description" content="zp">
+<meta property="og:description" content="图的表示图的定义图G定义为V和E的集合G={V, E}，其中V表示图中的所有的顶点集合，E表示的是G中的所有的边的集合。图按照E中的元素是否有方向，分为有向图和无向图。  图的表示方法上面给出的数学上图的定义，那么在计算机中如何表示图？通常意义上，有下面的两种方法：邻接表和邻接矩阵表示法。 无向图的邻接表和邻接矩阵表示如下所示： 有向图的邻接表和邻接矩阵表示如下所示： 根据上面的表示方法，下面定义">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/undigraph.jpg">
+<meta property="og:image" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/digraph.jpg">
+<meta property="og:image" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/graph_datastructure.jpg">
+<meta property="og:image" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/digraph_algorithm.jpg">
+<meta property="og:image" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/digraph_algorithm2.jpg">
+<meta property="og:updated_time" content="2017-10-09T07:59:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZP 博客">
-<meta name="twitter:description" content="zp">
+<meta name="twitter:title" content="有向图基本算法--遍历算法">
+<meta name="twitter:description" content="图的表示图的定义图G定义为V和E的集合G={V, E}，其中V表示图中的所有的顶点集合，E表示的是G中的所有的边的集合。图按照E中的元素是否有方向，分为有向图和无向图。  图的表示方法上面给出的数学上图的定义，那么在计算机中如何表示图？通常意义上，有下面的两种方法：邻接表和邻接矩阵表示法。 无向图的邻接表和邻接矩阵表示如下所示： 有向图的邻接表和邻接矩阵表示如下所示： 根据上面的表示方法，下面定义">
+<meta name="twitter:image" content="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/undigraph.jpg">
 
 
 
@@ -134,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://kangqiao.github.io/"/>
+  <link rel="canonical" href="http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/"/>
 
 
 
 
 
-  <title>ZP 博客</title>
+  <title>有向图基本算法--遍历算法 | ZP 博客</title>
   
 
 
@@ -165,9 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -294,283 +300,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kangqiao.github.io/2017/09/26/JavaScript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhaopan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7248615">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZP 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/26/JavaScript/" itemprop="url">JavaScript</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T18:46:59+08:00">
-                2017-09-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/26/JavaScript/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/26/JavaScript/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          数据类型6种数据类型object对象FunctionArrayDatanumberstringbooleannullundefined隐式转换+/-12345num - 0; //num作为数字来运算num + ''; //num数字作字符处理"37" - 7 //30"37" + 7 //"377
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/26/JavaScript/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kangqiao.github.io/2017/07/26/hexo指南/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zhaopan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7248615">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZP 博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/26/hexo指南/" itemprop="url">hexo指南</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T16:06:58+08:00">
-                2017-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/26/hexo指南/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/26/hexo指南/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          GitHub + HexoGitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.Hex
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/26/hexo指南/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -600,9 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/09/有向图基本算法-遍历算法/" itemprop="url">有向图基本算法--遍历算法</a></h1>
+          <h1 class="post-title" itemprop="name headline">有向图基本算法--遍历算法</h1>
         
 
         <div class="post-meta">
@@ -663,20 +393,21 @@
       
 
       
-        
-          
-          图的表示图的定义图G定义为V和E的集合G={V, E}，其中V表示图中的所有的顶点集合，E表示的是G中的所有的边的集合。图按照E中的元素是否有方向，分为有向图和无向图。 
-图的表示方法上面给出的数学上图的定义，那么在计算机中如何表示图？通常意义上，有下面的两种方法：邻接表和邻接矩阵表示法。
-无向图的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/09/有向图基本算法-遍历算法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="图的表示"><a href="#图的表示" class="headerlink" title="图的表示"></a>图的表示</h2><h4 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h4><p>图G定义为V和E的集合G={V, E}，其中V表示图中的所有的顶点集合，E表示的是G中的所有的边的集合。图按照E中的元素是否有方向，分为有向图和无向图。 </p>
+<h4 id="图的表示方法"><a href="#图的表示方法" class="headerlink" title="图的表示方法"></a>图的表示方法</h4><p>上面给出的数学上图的定义，那么在计算机中如何表示图？通常意义上，有下面的两种方法：邻接表和邻接矩阵表示法。</p>
+<p>无向图的邻接表和邻接矩阵表示如下所示：<br><img src="./undigraph.jpg" alt="无向图"></p>
+<p>有向图的邻接表和邻接矩阵表示如下所示：<br><img src="./digraph.jpg" alt="有向图"></p>
+<p>根据上面的表示方法，下面定义图G的这种数据结构（邻接表），首先定义图的顶点GraphVertex：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">// 顶点显示的符号</div><div class="line">public char Symbol &#123; get; set; &#125;</div><div class="line"></div><div class="line">// 顶点当前颜色</div><div class="line">public VertexColor Color &#123; get; set; &#125;</div><div class="line"></div><div class="line">// 顶点和开始节点之间的距离</div><div class="line">public int Distance &#123; get; set; &#125;</div><div class="line"></div><div class="line">// 广度遍历父节点</div><div class="line">public GraphVertex Parent &#123; get; set; &#125;</div><div class="line"></div><div class="line">// 深度优先搜索中的开始时间</div><div class="line">public int StartTime &#123; get; set; &#125;</div><div class="line"></div><div class="line">// 深度优先搜索中的结束时间</div><div class="line">public int FinishTime &#123; get; set; &#125;</div><div class="line">// 顶点对应的边</div><div class="line">public List&lt;GraphEdge&gt; FollowEdges &#123; get; set; &#125;</div></pre></td></tr></table></figure></p>
+<p>定义图G的边的数据结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 边开始顶点，在邻接表的存储中其实没有必要存储</div><div class="line">public GraphVertex From &#123; get; set; &#125;</div><div class="line">// 结束顶点</div><div class="line">public GraphVertex To &#123; get; set; &#125; </div><div class="line">// 边权重</div><div class="line">public int Weight &#123; get; set; &#125;</div></pre></td></tr></table></figure></p>
+<p>定义图：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 数据成员，这里假设的是顶点的symbol是各个不相同的</div><div class="line">private Hashtable graph = new Hashtable();</div><div class="line">private int time = 0;</div></pre></td></tr></table></figure></p>
+<p>整体上的结构如下：<br><img src="./graph_datastructure.jpg" alt=""></p>
+<h2 id="有向图的深度优先算法"><a href="#有向图的深度优先算法" class="headerlink" title="有向图的深度优先算法"></a>有向图的深度优先算法</h2><h4 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h4><p>其中d表明的是某个节点第一次被发现的时间点，f表明从节点出发的全部节点已经被发现的时间。<br><img src="./digraph_algorithm.jpg" alt=""></p>
+<h4 id="设计实现"><a href="#设计实现" class="headerlink" title="设计实现"></a>设计实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">// 深度优先遍历算法</div><div class="line">public void DepthFirstVisit(GraphVertex v)</div><div class="line">&#123;</div><div class="line">    // 刚刚被发现，颜色为gray</div><div class="line">    Console.WriteLine(v.Symbol);</div><div class="line">    v.Color = VertexColor.GRAY;</div><div class="line">    this.time++;</div><div class="line">    // 开始时间</div><div class="line">    v.StartTime = this.time;</div><div class="line">    foreach (GraphEdge edge in v.FollowEdges)</div><div class="line">    &#123;</div><div class="line">        // 还未被发现</div><div class="line">        if (edge.To.Color == VertexColor.WHITE)</div><div class="line">        &#123;</div><div class="line">            edge.To.Parent = v;</div><div class="line">            DepthFirstVisit(edge.To);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 如果边都已经发现完成</div><div class="line">    v.Color = VertexColor.BLACK;</div><div class="line">    this.time++;</div><div class="line">    v.FinishTime = this.time;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">public void DepthFirstTravel()</div><div class="line">&#123;</div><div class="line">    // 全局时间变量</div><div class="line">    this.time = 0;</div><div class="line">    // 初始化</div><div class="line">    GraphVertex v;</div><div class="line">    foreach (DictionaryEntry e in this.graph)</div><div class="line">    &#123;</div><div class="line">        v = (GraphVertex)e.Value;</div><div class="line">        v.Color = VertexColor.WHITE;</div><div class="line">        v.Parent = null;</div><div class="line">    &#125;</div><div class="line">    // 递归调用</div><div class="line">    // 队所有的顶点</div><div class="line">    foreach (DictionaryEntry e in this.graph)</div><div class="line">    &#123;</div><div class="line">        v = (GraphVertex)e.Value;</div><div class="line">        // 顶点为白色</div><div class="line">        if (v.Color == VertexColor.WHITE)</div><div class="line">        &#123;</div><div class="line">            DepthFirstVisit(v);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="有向图的遍历算法：广度优先"><a href="#有向图的遍历算法：广度优先" class="headerlink" title="有向图的遍历算法：广度优先"></a>有向图的遍历算法：广度优先</h2><h4 id="基本算法-1"><a href="#基本算法-1" class="headerlink" title="基本算法"></a>基本算法</h4><p>其中color域表示的是当前某个节点被发现的状态。如果是white表明没有被发现，gray表示当前顶点已经被发现，但是从该节点出发的节点还没有被全部发现。parent域定义的是在搜索算法时父节点。distance域表明的是从节点s到某个发现的节点v的路径距离。<br><img src="./digraph_algorithm2.jpg" alt=""></p>
+<h4 id="设计实现-1"><a href="#设计实现-1" class="headerlink" title="设计实现"></a>设计实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">// 广度优先遍历算法，同时生成广度优先树</div><div class="line">public void BreadthFirstTravel(GraphVertex s)</div><div class="line">&#123;</div><div class="line">    // 初始化所有节点</div><div class="line">    GraphVertex v;</div><div class="line">    foreach (DictionaryEntry e in this.graph)</div><div class="line">    &#123;</div><div class="line">        v = (GraphVertex)e.Value;</div><div class="line">        v.Color = VertexColor.WHITE;</div><div class="line">        v.Distance = int.MaxValue;</div><div class="line">        v.Parent = null;</div><div class="line">    &#125;</div><div class="line">    // 发现第一个节点</div><div class="line">    s.Color = VertexColor.GRAY;</div><div class="line">    s.Distance = 0;</div><div class="line">    s.Parent = null;</div><div class="line">    // 初始化队列</div><div class="line">    Queue context = </div><div class="line">        new Queue();</div><div class="line">    context.Enqueue(s);</div><div class="line">    // 如果队列不空的话</div><div class="line">    while (context.Count != 0)</div><div class="line">    &#123;</div><div class="line">        // 队首元素出队</div><div class="line">        v = context.Dequeue() as GraphVertex;</div><div class="line">        Console.WriteLine(v.Symbol);</div><div class="line">        // 遍历v的节点</div><div class="line">        foreach (GraphEdge item in v.FollowEdges)</div><div class="line">        &#123;</div><div class="line">            if ( item.To.Color == VertexColor.WHITE)</div><div class="line">            &#123;</div><div class="line">                item.To.Color = VertexColor.GRAY;</div><div class="line">                item.To.Distance = v.Distance + 1;</div><div class="line">                item.To.Parent = v;</div><div class="line">                context.Enqueue(item.To);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        v.Color = VertexColor.BLACK;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em> 上面的搜索代码结构是比较典型的搜索结构：首先定义队列或者是栈来保存程序运行状态，如果容器不空，取出元素，然后对取出的元素做一些处理。 </em></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.cnblogs.com/xuqiang/archive/2011/03/28/1997680.html" target="_blank" rel="external"></a><br><a href="https://zh.wikipedia.org/wiki/%E5%9B%BE_(%E6%95%B0%E5%AD%A6" target="_blank" rel="external"></a>)</p>
+
       
     </div>
     
@@ -691,14 +422,36 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/算法-图/" rel="tag"># 算法|图</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/26/hexo指南/" rel="prev" title="hexo指南">
+                hexo指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -708,10 +461,34 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -719,6 +496,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -739,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/7248615"
@@ -793,6 +590,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图的表示"><span class="nav-number">1.</span> <span class="nav-text">图的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图的定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">图的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的表示方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">图的表示方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有向图的深度优先算法"><span class="nav-number">2.</span> <span class="nav-text">有向图的深度优先算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本算法"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计实现"><span class="nav-number">2.0.2.</span> <span class="nav-text">设计实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有向图的遍历算法：广度优先"><span class="nav-number">3.</span> <span class="nav-text">有向图的遍历算法：广度优先</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本算法-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">基本算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计实现-1"><span class="nav-number">3.0.2.</span> <span class="nav-text">设计实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -906,10 +719,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -927,6 +740,18 @@
       <script id="dsq-count-scr" src="https://zhaopan.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://kangqiao.github.io/2017/01/09/有向图基本算法-遍历算法/';
+          this.page.identifier = '2017/01/09/有向图基本算法-遍历算法/';
+          this.page.title = '有向图基本算法--遍历算法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhaopan.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
