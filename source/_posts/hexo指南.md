@@ -1,6 +1,6 @@
 ---
 title: hexo指南
-date: 2017-07-26 16:06:58
+date: 2017-01-26 16:06:58
 tags: [hexo]
 comments: true
 ---
@@ -55,6 +55,7 @@ tags: [hexo]
 你好，欢迎来到我的个人技术博客。
 ![图片](./图片名.png)
 ```
+
 保存后，我们进行本地发布 `$ hexo server`
 ![本地发布](./hexo_server.png)
 
@@ -112,9 +113,9 @@ git push origin 分支名hexo
 ```
 
 ### 参考
-[https://hexo.io/zh-cn/](https://hexo.io/zh-cn/)
-[如何使用github和Hexo搭建个人博客](https://shikieiki.github.io/2017/02/23/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)
-[多设备同步hexo搭建的Github博客](http://www.jianshu.com/p/6fb0b287f950)
+- [https://hexo.io/zh-cn/](https://hexo.io/zh-cn/)
+- [如何使用github和Hexo搭建个人博客](https://shikieiki.github.io/2017/02/23/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)
+- [多设备同步hexo搭建的Github博客](http://www.jianshu.com/p/6fb0b287f950)
 
 
 
