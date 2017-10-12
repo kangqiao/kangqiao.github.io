@@ -112,6 +112,10 @@ git pull origin 分支名hexo
 git push origin 分支名hexo
 ```
 
+### 增加评论功能`gitment`
+
+[Hexo博客框架下Gitment取代多说评论](https://zonghongyan.github.io/2017/06/29/201706292034/)
+
 ### 参考
 - [https://hexo.io/zh-cn/](https://hexo.io/zh-cn/)
 - [如何使用github和Hexo搭建个人博客](https://shikieiki.github.io/2017/02/23/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)

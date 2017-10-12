@@ -52,7 +52,7 @@ menu:
   categories: /categories/
   #about: /about/
   #sitemap: /sitemap.xml
-  #commonweal: /404/
+  commonweal: /404.html
 
 # Enable/Disable menu icons.
 # Icon Mapping:
@@ -306,6 +306,17 @@ font:
 # Third Party Services Settings
 # ---------------------------------------------------------------
 
+# Gitment
+ # github id 7248615
+ # Introduction: https://imsun.net/posts/gitment-introduction/
+gitment:
+  enable: true
+  githubID: kangqiao
+  repo: kangqiao.github.io
+  ClientID: 531c962a95bc16bb08b7
+  ClientSecret: c1c950ff2a48209cb7b3de49ce6430d1266976e9
+  lazy: false
+
 # MathJax Support
 mathjax:
   enable: false
@@ -326,7 +337,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: zhaopan
   count: true
 
@@ -361,6 +372,8 @@ jiathis: true
 
 # Share
 #duoshuo_share: true
+
+baidu_site_verification: LQdYY6eYR3
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
