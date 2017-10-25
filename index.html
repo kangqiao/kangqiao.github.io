@@ -99,12 +99,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="ZhaoPan">
+<meta property="og:title" content="ZP">
 <meta property="og:url" content="http://kangqiao.github.io/index.html">
-<meta property="og:site_name" content="ZhaoPan">
+<meta property="og:site_name" content="ZP">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZhaoPan">
+<meta name="twitter:title" content="ZP">
 
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>ZhaoPan</title>
+  <title>ZP</title>
   
 
 
@@ -177,7 +177,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">ZhaoPan</span>
+        <span class="site-title">ZP</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -327,7 +327,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhaoPan">
+      <meta itemprop="name" content="ZP">
     </span>
 
     
@@ -453,7 +453,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhaoPan">
+      <meta itemprop="name" content="ZP">
     </span>
 
     
@@ -579,7 +579,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZhaoPan">
+      <meta itemprop="name" content="ZP">
     </span>
 
     
@@ -685,6 +685,176 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kangqiao.github.io/2016/08/02/排序算法总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhaopan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/7248615">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZP">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/02/排序算法总结/" itemprop="url">排序算法总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-02T00:00:00+08:00">
+                2016-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="1-排序算法汇总"><a href="#1-排序算法汇总" class="headerlink" title="1. 排序算法汇总"></a>1. 排序算法汇总</h3><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><table>
+<thead>
+<tr>
+<th>算法名称</th>
+<th>复杂度</th>
+<th>实现关键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n^2)</td>
+<td>（无序区，有序区）。从无序区通过交换找出最大元素放到有序区前端。</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n^2)</td>
+<td>（有序区，无序区）。在无序区里选择一个最小的元素跟在有序区的后面。</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n^2)</td>
+<td>（有序区，无序区）。把无序区的第一个元素插入到有序区的合适的位置。</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>nlog^2(n)</td>
+<td>每一轮按照事先决定的间隔进行插入排序，间隔会依次缩小，最后一次一定要是1(插入)。</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>nlog(n)</td>
+<td>（小数，枢纽元，大数）。</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>nlog(n)</td>
+<td></td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>O(n)</td>
+<td>将值为i的元素放入i号桶，最后依次把桶里的元素倒出来。</td>
+</tr>
+</tbody>
+</table>
+<p>不稳定的排序：<br>稳定性一个形象的比喻，本来有两个并列第三，一排序把原来并列的顺序给变了。<br>比如：选择排序、快速排序、堆排序、希尔排序；<br><a href="http://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95" target="_blank" rel="external">参考链接</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/08/02/排序算法总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -731,7 +901,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

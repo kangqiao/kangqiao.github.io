@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -98,21 +98,27 @@
 
 
 
-<meta name="description" content="GitHub + HexoGitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.Hexo也是现在使用比较广的,也比较简单部署的静态框架.所以我们选择GitHub pages + Hexo">
-<meta name="keywords" content="hexo">
+<meta name="description" content="1. 排序算法汇总1. 概述   算法名称 复杂度 实现关键     冒泡排序 O(n^2) （无序区，有序区）。从无序区通过交换找出最大元素放到有序区前端。   选择排序 O(n^2) （有序区，无序区）。在无序区里选择一个最小的元素跟在有序区的后面。   插入排序 O(n^2) （有序区，无序区）。把无序区的第一个元素插入到有序区的合适的位置。   希尔排序 nlog^2(n) 每一轮按照事先">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo指南">
-<meta property="og:url" content="http://kangqiao.github.io/2017/01/26/hexo指南/index.html">
+<meta property="og:title" content="排序算法总结">
+<meta property="og:url" content="http://kangqiao.github.io/2016/08/02/排序算法总结/index.html">
 <meta property="og:site_name" content="ZP">
-<meta property="og:description" content="GitHub + HexoGitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.Hexo也是现在使用比较广的,也比较简单部署的静态框架.所以我们选择GitHub pages + Hexo">
+<meta property="og:description" content="1. 排序算法汇总1. 概述   算法名称 复杂度 实现关键     冒泡排序 O(n^2) （无序区，有序区）。从无序区通过交换找出最大元素放到有序区前端。   选择排序 O(n^2) （有序区，无序区）。在无序区里选择一个最小的元素跟在有序区的后面。   插入排序 O(n^2) （有序区，无序区）。把无序区的第一个元素插入到有序区的合适的位置。   希尔排序 nlog^2(n) 每一轮按照事先">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://kangqiao.github.io/2017/01/26/hexo指南/hexo_server.png">
-<meta property="og:image" content="http://kangqiao.github.io/2017/01/26/hexo指南/github_create_branch.png">
-<meta property="og:updated_time" content="2017-10-12T07:56:02.000Z">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/Bubble_sort_animation.gif">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/bubble_sort.png">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/Selection_sort_animation.gif">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/select_sort.png">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/Insertion_sort_animation.gif">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/Insert-sort-animation.gif">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/quicksort.gif">
+<meta property="og:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/quick_sort.png">
+<meta property="og:updated_time" content="2017-10-25T08:48:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo指南">
-<meta name="twitter:description" content="GitHub + HexoGitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.Hexo也是现在使用比较广的,也比较简单部署的静态框架.所以我们选择GitHub pages + Hexo">
-<meta name="twitter:image" content="http://kangqiao.github.io/2017/01/26/hexo指南/hexo_server.png">
+<meta name="twitter:title" content="排序算法总结">
+<meta name="twitter:description" content="1. 排序算法汇总1. 概述   算法名称 复杂度 实现关键     冒泡排序 O(n^2) （无序区，有序区）。从无序区通过交换找出最大元素放到有序区前端。   选择排序 O(n^2) （有序区，无序区）。在无序区里选择一个最小的元素跟在有序区的后面。   插入排序 O(n^2) （有序区，无序区）。把无序区的第一个元素插入到有序区的合适的位置。   希尔排序 nlog^2(n) 每一轮按照事先">
+<meta name="twitter:image" content="http://kangqiao.github.io/2016/08/02/排序算法总结/Bubble_sort_animation.gif">
 
 
 
@@ -141,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://kangqiao.github.io/2017/01/26/hexo指南/"/>
+  <link rel="canonical" href="http://kangqiao.github.io/2016/08/02/排序算法总结/"/>
 
 
 
 
 
-  <title>hexo指南 | ZP</title>
+  <title>排序算法总结 | ZP</title>
   
 
 
@@ -324,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kangqiao.github.io/2017/01/26/hexo指南/">
+    <link itemprop="mainEntityOfPage" href="http://kangqiao.github.io/2016/08/02/排序算法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhaopan">
@@ -341,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo指南</h1>
+          <h1 class="post-title" itemprop="name headline">排序算法总结</h1>
         
 
         <div class="post-meta">
@@ -353,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-26T16:06:58+08:00">
-                2017-01-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-02T00:00:00+08:00">
+                2016-08-02
               </time>
             
 
@@ -391,25 +397,74 @@
       
 
       
-        <h3 id="GitHub-Hexo"><a href="#GitHub-Hexo" class="headerlink" title="GitHub + Hexo"></a>GitHub + Hexo</h3><p>GitHub Pages是GitHub提供的一项免费服务.每个GitHub账号可以申请一个pages仓库用来存放网页文件.而GitHub在已经安装好了服务器程序以便于浏览器访问这些网页.由于GitHub Pages不支持php和数据库,因此只能在上面部署静态博客框架.<br>Hexo也是现在使用比较广的,也比较简单部署的静态框架.所以我们选择GitHub pages + Hexo来部署我们的博客.</p>
-<h3 id="使用hexo搭建部署Github博客"><a href="#使用hexo搭建部署Github博客" class="headerlink" title="使用hexo搭建部署Github博客"></a>使用hexo搭建部署Github博客</h3><h4 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 使用npm全局安装Hexo</div><div class="line">npm install -g hexo-cli</div><div class="line">// 初始化博客工程 安装依赖</div><div class="line">npm init &lt;folder&gt;</div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div><div class="line">// 安装hexo git提交插件</div><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<h4 id="配置博客-config-yml"><a href="#配置博客-config-yml" class="headerlink" title="配置博客_config.yml"></a>配置博客<code>_config.yml</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">title: 这里填写博客的标题</div><div class="line">subtitle: 这里填写博客的副标题</div><div class="line">description: 这里填写博客的描述</div><div class="line">author: 这里填写博客的作者</div><div class="line">language: 这里填写博客的语言,如果是中文填写”zh-CN”</div><div class="line">timezone: Asia/Shanghai</div><div class="line">url: ”http://kangqiao.github.io“</div><div class="line"></div><div class="line">post_asset_folder: true </div><div class="line">#当您设置post_asset_folder为true参数后，在建立文件时，Hexo会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</div><div class="line">deploy:</div><div class="line">  type: 这里填写”git”</div><div class="line">  repo: 写”git@github.com:kangqiao/kangqiao.github.io.git”</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p><em> 如果需要了解更多hexo的配置或者想要做更高级的定制,可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">官方配置说明</a> </em></p>
-<h4 id="发表一篇文章"><a href="#发表一篇文章" class="headerlink" title="发表一篇文章"></a>发表一篇文章</h4><p>在终端命令行输入<code>hexo new 文章标题</code><br>我们可以在本地博客文件夹<code>source</code>-&gt;<code>_post</code>文件夹下看到我们新建的markdown文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: hexo指南</div><div class="line">date: 2017-07-26 16:06:58</div><div class="line">tags: [hexo]</div><div class="line">---</div><div class="line"></div><div class="line">你好，欢迎来到我的个人技术博客。</div><div class="line">![图片](./图片名.png)</div></pre></td></tr></table></figure>
-<p>保存后，我们进行本地发布 <code>$ hexo server</code><br><img src="./hexo_server.png" alt="本地发布"></p>
-<h4 id="发布博客到GitHub-Pages"><a href="#发布博客到GitHub-Pages" class="headerlink" title="发布博客到GitHub Pages"></a>发布博客到GitHub Pages</h4><p>我们只要在终端执行这样的命令即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g -d</div><div class="line">这个命令的意思是使用hexo生成整个博客的网页文件,并且上传到我们刚才repo里面填写的git仓库里.hexo会自动检索我们博客文章的改动,删除,增加,并生成一套新的网页.</div></pre></td></tr></table></figure></p>
-<p>或者:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
-<h3 id="上传博客工程"><a href="#上传博客工程" class="headerlink" title="上传博客工程"></a>上传博客工程</h3><p>上一步部署博客到Github以后，我们可以在Github仓库的master分支上看到我们上传的博客文件。<br>但是这个博客文件是不包含hexo配置的，所以我们需要新建分支，使用git指令将带hexo配置的Github工程文件上传到新建的分支上。<br><img src="./github_create_branch.png" alt="github创建分支"><br>在本地博客根目录下使用git指令上传项目到Github:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// git初始化</div><div class="line">git init</div><div class="line">// 添加仓库地址</div><div class="line">git remote add origin https://github.com/用户名/仓库名.git</div><div class="line">// 新建分支并切换到新建的分支</div><div class="line">git checkout -b 分支名</div><div class="line">// 添加所有本地文件到git</div><div class="line">git add .</div><div class="line">// git提交</div><div class="line">git commit -m &quot;&quot;</div><div class="line">// 文件推送到hexo分支</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure></p>
-<p>其他设备上clone下Github上新建的分支的文件到本地<br>在另一台设备上使用git指令下载Github新建分支上的文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 克隆文件到本地</div><div class="line">git clone -b 分支名 https://github.com/用户名/仓库名.git</div></pre></td></tr></table></figure></p>
-<p>本地写文章<br>在<code>source</code>-&gt;<code>_posts</code>文件夹下新建md文件，并编辑好保存后：</p>
-<p>同步项目源文件到Github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 添加源文件</div><div class="line">git add .</div><div class="line">// git提交</div><div class="line">git commit -m &quot;&quot;</div><div class="line">// 先拉原来Github分支上的源文件到本地，进行合并</div><div class="line">git pull origin 分支名hexo</div><div class="line">// 比较解决前后版本冲突后，push源文件到Github的分支</div><div class="line">git push origin 分支名hexo</div></pre></td></tr></table></figure></p>
-<h3 id="增加评论功能gitment"><a href="#增加评论功能gitment" class="headerlink" title="增加评论功能gitment"></a>增加评论功能<code>gitment</code></h3><p><a href="https://zonghongyan.github.io/2017/06/29/201706292034/" target="_blank" rel="external">Hexo博客框架下Gitment取代多说评论</a></p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a></li>
-<li><a href="https://shikieiki.github.io/2017/02/23/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">如何使用github和Hexo搭建个人博客</a></li>
-<li><a href="http://www.jianshu.com/p/6fb0b287f950" target="_blank" rel="external">多设备同步hexo搭建的Github博客</a></li>
-</ul>
+        <h3 id="1-排序算法汇总"><a href="#1-排序算法汇总" class="headerlink" title="1. 排序算法汇总"></a>1. 排序算法汇总</h3><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><table>
+<thead>
+<tr>
+<th>算法名称</th>
+<th>复杂度</th>
+<th>实现关键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n^2)</td>
+<td>（无序区，有序区）。从无序区通过交换找出最大元素放到有序区前端。</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n^2)</td>
+<td>（有序区，无序区）。在无序区里选择一个最小的元素跟在有序区的后面。</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n^2)</td>
+<td>（有序区，无序区）。把无序区的第一个元素插入到有序区的合适的位置。</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>nlog^2(n)</td>
+<td>每一轮按照事先决定的间隔进行插入排序，间隔会依次缩小，最后一次一定要是1(插入)。</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>nlog(n)</td>
+<td>（小数，枢纽元，大数）。</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>nlog(n)</td>
+<td></td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>O(n)</td>
+<td>将值为i的元素放入i号桶，最后依次把桶里的元素倒出来。</td>
+</tr>
+</tbody>
+</table>
+<p>不稳定的排序：<br>稳定性一个形象的比喻，本来有两个并列第三，一排序把原来并列的顺序给变了。<br>比如：选择排序、快速排序、堆排序、希尔排序；<br><a href="http://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95" target="_blank" rel="external">参考链接</a><br><a id="more"></a></p>
+<h3 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2. 冒泡排序"></a>2. 冒泡排序</h3><p><img src="./Bubble_sort_animation.gif" alt=""></p>
+<p>每次都把未排序的第一个作为起始点，然后逐渐冒泡上升，之后未排序区越来越少，最终排序完成</p>
+<p><img src="./bubble_sort.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 冒泡排序</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n<span class="number">-1</span>; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 比较相邻元素，若a[j]比a[j+1]大，则交换</span></div><div class="line">		<span class="comment">// a[j]就像一个气泡一样“浮”到合适位置了</span></div><div class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;n<span class="number">-1</span>-i; j++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])</div><div class="line">			&#123;</div><div class="line">				swap(&amp;a[j], &amp;a[j+<span class="number">1</span>]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-选择排序"><a href="#3-选择排序" class="headerlink" title="3. 选择排序"></a>3. 选择排序</h3><p><img src="./Selection_sort_animation.gif" alt=""></p>
+<p>每一趟从待排序的数据元素中<strong>选出最小（或最大）的一个元素</strong>，顺序放在已排好序的数列的最后，直到全部待排序的数据元素排完。</p>
+<p><img src="./select_sort.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 选择排序</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">select_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,min=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)</div><div class="line">	&#123;</div><div class="line">		min = i;</div><div class="line">		<span class="comment">// 找到最小值</span></div><div class="line">		<span class="keyword">for</span> (j=i+<span class="number">1</span>; j &lt;= n<span class="number">-1</span>; j++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span> (a[min] &gt; a[j])</div><div class="line">				min = j;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(min != i)</div><div class="line">		&#123;</div><div class="line">			swap(&amp;a[min], &amp;a[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-插入排序"><a href="#4-插入排序" class="headerlink" title="4. 插入排序"></a>4. 插入排序</h3><p><img src="./Insertion_sort_animation.gif" alt=""></p>
+<p>每次排序从未排序区取一个“牌”，然后往前插入(包括了两步：大的往后移，把牌放到合适位置)。<br><img src="./Insert-sort-animation.gif" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 插入排序</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> tmp=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 取牌</span></div><div class="line">		tmp = a[i];</div><div class="line">		<span class="comment">// 往前插的起始位置</span></div><div class="line">		j = i - <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="comment">// 大的a[j]都放后面，寻找出j</span></div><div class="line">		<span class="keyword">while</span> ((j &gt;= <span class="number">0</span>) &amp;&amp; a[j] &gt; tmp)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">// 往后放一个</span></div><div class="line">			a[j+<span class="number">1</span>] = a[j];</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// 放到该放的位置</span></div><div class="line">		a[j+<span class="number">1</span>]=tmp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外还有种思路，把数据后移的过程换成交换的过程</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 插入排序，选中的牌冒泡向前插入</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert_sort_2</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="comment">//通过i选牌</span></div><div class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 冒泡向前插入(i-1 --&gt; 0)</span></div><div class="line">		<span class="keyword">for</span> (j=i<span class="number">-1</span>; j&gt;=<span class="number">0</span> &amp;&amp; a[j] &gt; a[j + <span class="number">1</span>]; j--)</div><div class="line">		&#123;</div><div class="line">			swap(&amp;a[j], &amp;a[j+<span class="number">1</span>]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	print_a(a, n);</div><div class="line">&#125;</div><div class="line">`</div></pre></td></tr></table></figure>
+<h3 id="5-希尔排序"><a href="#5-希尔排序" class="headerlink" title="5. 希尔排序"></a>5. 希尔排序</h3><p>对插入排序再加一个步长的循环就是希尔排序了，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[ 13 14 94 33 82 25 59 94 65 23 45 27 73 25 39 10 ]</div></pre></td></tr></table></figure></p>
+<p>按照5步长排序，则相当于按列先进行排序(实际是通过下标实现的)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">13 14 94 33 82</div><div class="line">25 59 94 65 23</div><div class="line">45 27 73 25 39</div><div class="line">10</div></pre></td></tr></table></figure></p>
+<p>排序后结果为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">10 14 73 25 23</div><div class="line">13 27 94 33 39</div><div class="line">25 59 94 65 82</div><div class="line">45</div></pre></td></tr></table></figure></p>
+<p>多次循环后，只需要<strong>最终步长为1</strong>即可。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 希尔排序</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> tmp=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> gap=<span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (gap &lt;= n)</div><div class="line">	&#123;</div><div class="line">		gap = gap*<span class="number">3</span> + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span> (gap &gt; <span class="number">0</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 取牌</span></div><div class="line">		<span class="keyword">for</span> (i = gap; i &lt; n; i++)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">// 冒泡向前插入(i-gap : gap : 0), 保证每列ok</span></div><div class="line">			<span class="keyword">for</span> (j = i - gap; (j &gt;= <span class="number">0</span>) &amp;&amp; (a[j] &gt; a[j + gap]); j = j - gap)</div><div class="line">			&#123;</div><div class="line">				swap(&amp;a[j], &amp;a[j+gap]);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		gap = (gap<span class="number">-1</span>) / <span class="number">3</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6-快速排序"><a href="#6-快速排序" class="headerlink" title="6. 快速排序"></a>6. 快速排序</h3><p><img src="./quicksort.gif" alt=""><br>每次迭代都选出一个基准，左边放小的，右边放大的，最终迭代完成。</p>
+<p><img src="./quick_sort.png" alt=""></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 快速排序分区</span></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> p, <span class="keyword">int</span> r)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</div><div class="line">	<span class="comment">// x为基准</span></div><div class="line">	x = a[r];</div><div class="line">	<span class="comment">// i为界限,发现小于x的，就i++，再放到i处</span></div><div class="line">	i = p<span class="number">-1</span>;</div><div class="line">	<span class="keyword">for</span> (j=p; j&lt;= r<span class="number">-1</span>; j++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (a[j]&lt;=x)</div><div class="line">		&#123;</div><div class="line">			i++;</div><div class="line">			swap(&amp;a[i], &amp;a[j]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 至此，所有小于x的都到i左边了(a[0]~a[i-1])，a[r]是x，因此交换a[i+1]和a[r]</span></div><div class="line">	swap(&amp;a[i+<span class="number">1</span>], &amp;a[r]);</div><div class="line">	<span class="keyword">return</span> i+<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 快速排序</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> p, <span class="keyword">int</span> r)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> q=<span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (p &lt; r)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 在数据集之中，选择一个元素作为"基准"（pivot）</span></div><div class="line">		<span class="comment">// 所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边</span></div><div class="line">		q = partition(a, p, r);</div><div class="line">		<span class="comment">// 对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</span></div><div class="line">		quick_sort(a, p, q<span class="number">-1</span>);</div><div class="line">		quick_sort(a, q+<span class="number">1</span>, r);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -427,7 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -440,18 +495,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/09/有向图基本算法-遍历算法/" rel="next" title="有向图基本算法--遍历算法">
-                <i class="fa fa-chevron-left"></i> 有向图基本算法--遍历算法
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/26/JavaScript/" rel="prev" title="JavaScript">
-                JavaScript <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/09/有向图基本算法-遍历算法/" rel="prev" title="有向图基本算法--遍历算法">
+                有向图基本算法--遍历算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -604,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Hexo"><span class="nav-number">1.</span> <span class="nav-text">GitHub + Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo搭建部署Github博客"><span class="nav-number">2.</span> <span class="nav-text">使用hexo搭建部署Github博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化博客"><span class="nav-number">2.1.</span> <span class="nav-text">初始化博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置博客-config-yml"><span class="nav-number">2.2.</span> <span class="nav-text">配置博客_config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发表一篇文章"><span class="nav-number">2.3.</span> <span class="nav-text">发表一篇文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布博客到GitHub-Pages"><span class="nav-number">2.4.</span> <span class="nav-text">发布博客到GitHub Pages</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传博客工程"><span class="nav-number">3.</span> <span class="nav-text">上传博客工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加评论功能gitment"><span class="nav-number">4.</span> <span class="nav-text">增加评论功能gitment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-排序算法汇总"><span class="nav-number">1.</span> <span class="nav-text">1. 排序算法汇总</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概述"><span class="nav-number">2.</span> <span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-冒泡排序"><span class="nav-number">3.</span> <span class="nav-text">2. 冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-选择排序"><span class="nav-number">4.</span> <span class="nav-text">3. 选择排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-插入排序"><span class="nav-number">5.</span> <span class="nav-text">4. 插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-希尔排序"><span class="nav-number">6.</span> <span class="nav-text">5. 希尔排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-快速排序"><span class="nav-number">7.</span> <span class="nav-text">6. 快速排序</span></a></li></ol></div>
             
 
           </div>
